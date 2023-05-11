@@ -6,13 +6,13 @@ You will need **Python 3.11.0*
 - Create a virtual environment 
 > python -v venv env
 - Create a file named *.env* as follows
-> # .env file
+> \# .env file
 > OPENAI_API_KEY = "Your api key"
 - run the environment
-> # in Windows
+> \# in Windows
 > ./env/Scripts/activate
 
-> # in Linux
+> \# in Linux
 > source env/bin/activate
 
 - install dependencies
