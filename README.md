@@ -7,12 +7,15 @@ You will need **Python 3.11.0*
 > python -v venv env
 - Create a file named *.env* as follows
 > \# .env file
+> 
 > OPENAI_API_KEY = "Your api key"
 - run the environment
 > \# in Windows
+> 
 > ./env/Scripts/activate
 
 > \# in Linux
+> 
 > source env/bin/activate
 
 - install dependencies
