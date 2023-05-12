@@ -21,7 +21,8 @@ def yoda_response(prompt : str):
     return get_completion(prompt+ "\n\nRispondi come se fossi il maestro Yoda di Star Wars.")
 
 start_time = datetime.datetime.now() 
-chat_id_allow = [906227023,5059416406]
+chat_id_allow = os.getenv("WHITELIST_ID_TELEGRAM").split(",") # IDs stored in .env as Comma Separated Values
+# Example of WHITELIST: WHITELIST_ID_TELEGRAM = 123456,24566,344142
 infoMessage = """
 Commands:\n
 1)/ping 🏓
@@ -60,7 +61,7 @@ bot = telepot.Bot(TOKEN_TELEGRAM)
 bot.message_loop(on_chat_message)
     
 for id in chat_id_allow:
-    bot.sendMessage(id, 'May the force be with you..🍀')
+    bot.sendMessage(id, f'May the force be with you..🍀')
     send_info_commands(id)
 print ('Yoda listening ...')
 

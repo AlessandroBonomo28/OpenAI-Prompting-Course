@@ -15,5 +15,5 @@ def get_completion(prompt, model="gpt-3.5-turbo"):
     )
     return response.choices[0].message["content"]
 
-greet = get_completion("quante ossa ci sono nel corpo?")
+greet = get_completion("Ciao chat GPT")
 print(greet)
