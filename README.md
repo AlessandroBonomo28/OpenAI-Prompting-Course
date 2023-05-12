@@ -23,7 +23,9 @@ You will need **Python 3.11.0*
 
 Now you can run any python file in the repository
 
-## env configuration for bot telegram
+## .env configuration for bot telegram
+> \#.env file
+>
 > OPENAI_API_KEY = "xxxxxxx"
 > 
 > TOKEN_TELEGRAM = "xxxxxxx"
