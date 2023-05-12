@@ -28,4 +28,4 @@ Now you can run any python file in the repository
 > 
 > TOKEN_TELEGRAM = "xxxxxxx"
 > 
-> WHITELIST_ID_TELEGRAM = "xxxx,yyyy"
+> WHITELIST_ID_TELEGRAM = "aaaa,bbbb,cccc,ddddd"
