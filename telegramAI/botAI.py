@@ -53,8 +53,11 @@ def on_chat_message(msg):
         elif msg["text"] == "/time": 
             bot.sendMessage(chat_id, get_message_time_elapsed())
         else:
-            bot.sendMessage(chat_id, ('💭'*random.randrange(1, 4)))
-            bot.sendMessage(chat_id, yoda_response(msg["text"]))
+            try:
+                bot.sendMessage(chat_id, ('💭'*random.randrange(1, 4)))
+                bot.sendMessage(chat_id, yoda_response(msg["text"]))
+            except:
+                bot.sendMessage(chat_id, 'Much to learn you still have. Tired of your questions, I am 🥱.')
 
 bot = telepot.Bot(TOKEN_TELEGRAM)
 bot.message_loop(on_chat_message)
