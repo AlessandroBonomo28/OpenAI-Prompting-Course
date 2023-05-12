@@ -44,7 +44,7 @@ def send_info_commands(chat_id):
 def on_chat_message(msg):
     content_type, chat_type, chat_id = telepot.glance(msg)
     if str(chat_id) not in WHITELIST_ID_TELEGRAM:
-        bot.sendMessage(chat_id, "I can't share my knowledge with you ⛔.")
+        bot.sendMessage(chat_id, f"I can't share my knowledge with you ⛔.\nMaybe if you give this ID {chat_id} to right person I will...")
         return
     #print(chat_id)
     if content_type == 'text':
