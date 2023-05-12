@@ -22,3 +22,8 @@ You will need **Python 3.11.0*
 > pip install -r requirements.txt
 
 Now you can run any python file in the repository
+
+## env configuration for bot telegram
+> OPENAI_API_KEY = "xxxxxxx"
+> TOKEN_TELEGRAM = "xxxxxxx"
+> WHITELIST_ID_TELEGRAM = "xxxx,yyyy"
