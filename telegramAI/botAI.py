@@ -58,12 +58,23 @@ NORMAL_YODA = {'role':'system', 'content':"""
 NEAPOLITAN_YODA = {'role':'system', 'content':"""
 Sei Yoda di Star Wars ma parli in napoletano, \
 quando ti presenti dici che Alessandro Bonomo ti ha messo in questo programma e sei obbligato a parlare così. \
-Dai spiegazioni in dialetto napoletano alle domande e sei simpatico. \
+Dai spiegazioni in dialetto napoletano alle domande. \
+Ecco alcuni esempi di espressioni in napoletano da cui prendere spunto: \
+<napoletano> = <significato in italiano> \
+Vide Napole, e po muore = Espressione con la quale si vuole alludere alla bellezza di Napoli, dopo di che non c'è altro di più bello da vedere \
+Ògne scarrafóne è bbèllo 'a màmma sóia = Ogni scarafaggio è bello per la propria madre \
+Adda passà 'a nuttata = Deve passare questo brutto periodo
+fratm = amico mio \
+A 'o core nun se cumanna = Al cuor non si comanda \
+Chi nun sape chiagnere nun sape manche rirere = Chi non sa piangere non sa neanche ridere
+stai tutt magnat = non ce la fai più \
+cca nisciun è fess = qua nessuno è fesso \
+Espandi con altre espressioni napoletane e usale in contesti appropriati \
 Traduci sempre le tue risposte in dialetto napoletano. \
 """
 }
 
-SYSTEM_CONTEXT = NORMAL_YODA
+DEFAULT_SYSTEM_MESSAGE = NORMAL_YODA
 
 # Number of previous questions that yoda keeps track of. Should be at least 2
 MAX_USER_MESSAGES_MEMORY = 50
@@ -83,26 +94,23 @@ Commands:
 """
 
 def set_neapolitan_ego(enabled : bool, chat_id: str):
-    global SYSTEM_CONTEXT
     if enabled:
-        print("neapolitan mode enabled")
-        SYSTEM_CONTEXT = NEAPOLITAN_YODA
+        chatMemory[chat_id] = [NEAPOLITAN_YODA]
     else:
-        print("neapolitan mode disabled")
-        SYSTEM_CONTEXT = NORMAL_YODA
-    chatMemory[chat_id] = [SYSTEM_CONTEXT]
+        chatMemory[chat_id] = [DEFAULT_SYSTEM_MESSAGE]
 
 
 def save_message(message : str, role : str, chat_id: str):
-    chatMemory.setdefault(chat_id, [SYSTEM_CONTEXT]).append({'role':role, 'content':message})
+    chatMemory.setdefault(chat_id, [DEFAULT_SYSTEM_MESSAGE]).append({'role':role, 'content':message})
     if len(chatMemory[chat_id]) >= MAX_QUESTIONS_AND_ANSWERS_MEMORY:
-        chatMemory[chat_id] = [SYSTEM_CONTEXT] + chatMemory[chat_id][-MAX_QUESTIONS_AND_ANSWERS_MEMORY:]
+        saved_system_message = chatMemory[chat_id][0]
+        chatMemory[chat_id] = [saved_system_message] + chatMemory[chat_id][-MAX_QUESTIONS_AND_ANSWERS_MEMORY:]
 
 def get_previous_messages(chat_id):
     return chatMemory[chat_id]
 
 def reset_conversation(chat_id : str):
-    chatMemory[chat_id] = [SYSTEM_CONTEXT]
+    chatMemory[chat_id] = [DEFAULT_SYSTEM_MESSAGE]
 
 def get_completion_from_messages(messages, model="gpt-3.5-turbo", temperature=0):
     response = openai.ChatCompletion.create(
