@@ -1,5 +1,6 @@
 # OpenAI Prompting Course
  Prompting ChatGPT-3 course by OpenAI
+ https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/
 ## Get started
 You will need **Python 3.11.0*
 - Get the GPT API key from the offical website of OpenAI
