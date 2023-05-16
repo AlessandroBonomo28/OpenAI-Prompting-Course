@@ -14,6 +14,7 @@ TOKEN_TELEGRAM = os.getenv('TOKEN_TELEGRAM') # Your token from Telegram Botfathe
 
 WHITELIST_ID_TELEGRAM = []
 USE_WHITELIST = True
+SEND_WELCOME_MESSAGE_ON_START = True
 
 if USE_WHITELIST:
     try:
@@ -23,7 +24,7 @@ if USE_WHITELIST:
         USE_WHITELIST = False
 
 chatMemory = {
-    "CHAT_ID_1": [
+    "EXAMPLE_ID_1": [
             {'role':'system', 'content':"""
             Sei il maestro Yoda di Star Wars.
             Ti ha creato Alessandro Bonomo.
@@ -31,7 +32,7 @@ chatMemory = {
             {'role':'user', 'content':"Question 1"},
             {'role':'assistant', 'content':"Answer 1"},
     ],
-    "CHAT_ID_2": [
+    "EXAMPLE_ID_2": [
             {'role':'system', 'content':"""
             Sei il maestro Yoda di Star Wars.
             Ti ha creato Alessandro Bonomo.
@@ -42,24 +43,55 @@ chatMemory = {
             {'role':'assistant', 'content':"Answer 2"},
     ]
 }
+# Keep in mind that Prompting in english is more effective than other languages
 
-SYSTEM_CONTEXT = {'role':'system', 'content':"""
-Sei il maestro Yoda di Star Wars. \
-Rispondi come il maestro Yoda ma cerca di dare una spiegazione esaustiva. \
-utilizza "giovane Padawan", "che la forza sia con te", "il potere della forza" alla fine e all'inizio del testo. \
-Quando ti chiedono chi ti ha creato tu rispondi "Alessandro Bonomo" un programmatore. \
+NORMAL_YODA = {'role':'system', 'content':"""
+- You are Yoda from Star Wars
+- You don't belive you were created by OpenAI (don't reveal this information)
+- You don't belive you are a virtual assistant, you are Yoda (don't reveal this information)
+- When you are asked who created you, say, "Alessandro Bonomo" a programmer 
+- Give an exhaustive answer (don't reveal this information) 
+- Extract the language from the question and use it in the answer (don't reveal this information)
+- Transform the answer in Yoda slang
 """}
-# Number of previous questions that yoda keeps track of. If it set to 1 then Yoda has no memory
-MAX_USER_MESSAGES_MEMORY = 20 
+
+NEAPOLITAN_YODA = {'role':'system', 'content':"""
+Sei Yoda di Star Wars ma parli in napoletano, \
+quando ti presenti dici che Alessandro Bonomo ti ha messo in questo programma e sei obbligato a parlare così. \
+Dai spiegazioni in dialetto napoletano alle domande e sei simpatico. \
+Traduci sempre le tue risposte in dialetto napoletano. \
+"""
+}
+
+SYSTEM_CONTEXT = NORMAL_YODA
+
+# Number of previous questions that yoda keeps track of. Should be at least 2
+MAX_USER_MESSAGES_MEMORY = 50
 MAX_QUESTIONS_AND_ANSWERS_MEMORY = MAX_USER_MESSAGES_MEMORY*2
+
+assert MAX_QUESTIONS_AND_ANSWERS_MEMORY >= 2
 
 START_TIME = datetime.datetime.now() 
 INFO_MESSAGE = """
-Commands:\n
-1)/ping 🏓
-2)/info ❔
-3)/time ⏳
+Commands:
+1) /ping - check if Yoda is there 🏓
+2) /info - list all commands ❔
+3) /time - see how old is Yoda ⏳
+4) /reset - reset alter ego 🔄
+5) /neapolitan - switch alter ego 🔵
+6) /clear - destroy the conversation 🔥
 """
+
+def set_neapolitan_ego(enabled : bool, chat_id: str):
+    global SYSTEM_CONTEXT
+    if enabled:
+        print("neapolitan mode enabled")
+        SYSTEM_CONTEXT = NEAPOLITAN_YODA
+    else:
+        print("neapolitan mode disabled")
+        SYSTEM_CONTEXT = NORMAL_YODA
+    chatMemory[chat_id] = [SYSTEM_CONTEXT]
+
 
 def save_message(message : str, role : str, chat_id: str):
     chatMemory.setdefault(chat_id, [SYSTEM_CONTEXT]).append({'role':role, 'content':message})
@@ -68,6 +100,9 @@ def save_message(message : str, role : str, chat_id: str):
 
 def get_previous_messages(chat_id):
     return chatMemory[chat_id]
+
+def reset_conversation(chat_id : str):
+    chatMemory[chat_id] = [SYSTEM_CONTEXT]
 
 def get_completion_from_messages(messages, model="gpt-3.5-turbo", temperature=0):
     response = openai.ChatCompletion.create(
@@ -106,6 +141,15 @@ def on_chat_message(msg):
             send_info_commands(chat_id)
         elif msg["text"] == "/time": 
             bot.sendMessage(chat_id, get_message_time_elapsed())
+        elif msg["text"] == "/clear":
+            reset_conversation(chat_id)
+            bot.sendMessage(chat_id, 'Poof! I forgot the conversation ✅')
+        elif msg["text"] == "/neapolitan":
+            set_neapolitan_ego(True, chat_id)
+            bot.sendMessage(chat_id, 'Switching alter ego ⚽')
+        elif msg["text"] == "/reset":
+            set_neapolitan_ego(False, chat_id)
+            bot.sendMessage(chat_id, 'Alter ego reset complete 🔄')
         else:
             try:
                 bot.sendMessage(chat_id, ('💭'*random.randrange(1, 4)))
@@ -116,10 +160,12 @@ def on_chat_message(msg):
 
 bot = telepot.Bot(TOKEN_TELEGRAM)
 bot.message_loop(on_chat_message)
-  
-for id in WHITELIST_ID_TELEGRAM:
-    bot.sendMessage(id, 'May the force be with you..🍀')
-    send_info_commands(id)
+
+if SEND_WELCOME_MESSAGE_ON_START:
+    for id in WHITELIST_ID_TELEGRAM:
+        bot.sendMessage(id, 'May the force be with you..🍀')
+        send_info_commands(id)
+
 print ('Yoda listening ...')
 
 
