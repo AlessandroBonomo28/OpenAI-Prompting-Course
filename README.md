@@ -35,7 +35,7 @@ In this repo there are two main folders
 - simple-bot.py
 
 ###  Simple-bot
-Is a basic template that I made for making custom telegram bots. This bot speaks like Yoda from Star Wars.
+Is a basic template that I made for making custom telegram bots. **This bot speaks like Yoda** from Star Wars, **can remember** previous questions, **is context-aware** and can produce pretty funny answers.
 ### Multi ego bot
 Is a more sofisticated bot that and can switch into its neapolitan alter ego.
 #### Bot in action
@@ -47,14 +47,24 @@ Now let's ask him some questions
 
 ![story](https://github.com/AlessandroBonomo28/OpenAI-Prompting-Course/assets/75626033/e1d5387c-3a2e-4494-bd42-81b140c506c3)
 
-Yoda is context aware and can remember previous messages, let's prove it!
+Yoda is **context-aware** and can **remember previous messages**, let's prove it!
 
 ![context](https://github.com/AlessandroBonomo28/OpenAI-Prompting-Course/assets/75626033/281ecba5-e89f-4810-b931-7cab397d6072)
 
-Yoda seems pretty chill, let's switch to its neapolitan ego
+You can also empty Yoda's memory
 
+![clear](https://github.com/AlessandroBonomo28/OpenAI-Prompting-Course/assets/75626033/66a1ae64-160e-4da4-8905-25d6795a0f9b)
 
+Yoda seems pretty chill, let's switch to its **neapolitan ego**
 
+![neapolitan1](https://github.com/AlessandroBonomo28/OpenAI-Prompting-Course/assets/75626033/621f53a0-e41a-455f-ad86-dbc57c215086)
+![neapolitan2](https://github.com/AlessandroBonomo28/OpenAI-Prompting-Course/assets/75626033/7c14eccc-2819-4d89-83d0-81c7415afed1)
+
+Now let's go back to the normal Yoda ego
+
+![reset](https://github.com/AlessandroBonomo28/OpenAI-Prompting-Course/assets/75626033/4698b9f0-15c9-4c05-afa6-960f9c7e6b7b)
+
+Yoda is back and as you see it respond in the language spoke by the user (in this case Italian).
 ## .env configuration for scripts in the telegram folder
 > \#.env file
 >
