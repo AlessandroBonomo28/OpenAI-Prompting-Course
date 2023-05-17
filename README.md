@@ -2,7 +2,7 @@
  Prompting ChatGPT-3 course by OpenAI
  https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/
 ## Get started
-Note: I am using *Python 3.11.0* but I think that this with work also with *3.9* and *3.10* 
+Note: I am using *Python 3.11.0* but I think that this will work also for *3.9* and *3.10* 
 - Get the GPT API key from the offical website of OpenAI
 - Create a virtual environment 
 > python -v venv env
@@ -30,6 +30,7 @@ In this repo there are two main folders
 - telegramAI
 
 **In the lesson folder** there are code example of gpt prompting. I advice you to start with start.py.
+
 **In the telegram folder** I made a telegram chatbot powered by ChatGPT AI. You will find two scripts in this folder:
 - multi-ego-bot.py
 - sample-bot.py
