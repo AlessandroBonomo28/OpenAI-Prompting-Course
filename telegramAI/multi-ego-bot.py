@@ -18,7 +18,10 @@ SEND_WELCOME_MESSAGE_ON_START = True
 
 if USE_WHITELIST:
     try:
-        WHITELIST_ID_TELEGRAM = os.getenv("WHITELIST_ID_TELEGRAM").split(",") 
+        WHITELIST_ID_TELEGRAM = os.getenv("WHITELIST_ID_TELEGRAM").split(",")
+        if len(WHITELIST_ID_TELEGRAM) == 0:
+            print("Whitelist must contain at least 1 entry. Whitelist is disabled.")
+            USE_WHITELIST = False
     except:
         print("Failed to load whitelist from .env file. Whitelist is disabled.")
         USE_WHITELIST = False
