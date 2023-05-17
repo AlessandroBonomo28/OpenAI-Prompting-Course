@@ -57,9 +57,9 @@ You can also empty Yoda's memory
 
 Yoda seems pretty chill, let's switch to its **neapolitan ego**
 
-![napoli1](https://github.com/AlessandroBonomo28/OpenAI-Prompting-Course/assets/75626033/af066bf4-c807-4ab6-bda5-6139b1406aa6)
-
 ![yodanapoli](https://github.com/AlessandroBonomo28/OpenAI-Prompting-Course/assets/75626033/554ad6b5-db31-431b-8301-53115fd4f0dc)
+
+Yoda Napoletano (alcune volte più romano che napoletano) can answer complex questions
 
 ![sock1](https://github.com/AlessandroBonomo28/OpenAI-Prompting-Course/assets/75626033/8164bf99-ef53-477d-b446-1291c5ec07c4)
 ![sock2](https://github.com/AlessandroBonomo28/OpenAI-Prompting-Course/assets/75626033/1d3f2083-58a6-4a25-9191-e4a9ad276bd3)
