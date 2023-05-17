@@ -35,7 +35,7 @@ In this repo there are two main folders
 - simple-bot.py
 
 ###  Simple-bot
-Is a basic template that I made for making custom telegram bot. This bot speaks like Yoda from Star Wars.
+Is a basic template that I made for making custom telegram bots. This bot speaks like Yoda from Star Wars.
 ### Multi ego bot
 Is a more sofisticated bot that and can switch into its neapolitan alter ego.
 ## .env configuration for scripts in the telegram folder
