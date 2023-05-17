@@ -43,6 +43,14 @@ Yoda can do a lot of things! Here's an example of me chatting with him
 
 ![yodacommands](https://github.com/AlessandroBonomo28/OpenAI-Prompting-Course/assets/75626033/c52e7fdd-145b-4666-a22e-7d6b04707812)
 
+Now let's ask him some questions
+
+![story](https://github.com/AlessandroBonomo28/OpenAI-Prompting-Course/assets/75626033/e1d5387c-3a2e-4494-bd42-81b140c506c3)
+
+Yoda seems pretty chill, let's switch to its neapolitan ego
+
+
+
 ## .env configuration for scripts in the telegram folder
 > \#.env file
 >
