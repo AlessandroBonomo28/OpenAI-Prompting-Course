@@ -27,14 +27,14 @@ Note: I am using *Python 3.11.0* but I think that this with work also with *3.9*
 ## What you will find in this repo
 In this repo there are two main folders
 - lessons
-- telegram
+- telegramAI
 
 **In the lesson folder** there are code example of gpt prompting. I advice you to start with start.py.
 **In the telegram folder** I made a telegram chatbot powered by ChatGPT AI. You will find two scripts in this folder:
 - multi-ego-bot.py
-- simple-bot.py
+- sample-bot.py
 
-###  Simple-bot
+###  Sample-bot
 Is a basic template that I made for making custom telegram bots. **This bot speaks like Yoda** from Star Wars, **can remember** previous questions, **is context-aware** and can produce pretty funny answers.
 ### Multi ego bot
 Is a more sofisticated bot that and can switch into its neapolitan alter ego.
