@@ -11,11 +11,11 @@ Note: I am using *Python 3.11.0* but I think that this with work also with *3.9*
 > 
 > OPENAI_API_KEY = "Your api key"
 - run the environment
-> \# in Windows
+> \# If you are using windows Windows
 > 
 > ./env/Scripts/activate
-
-> \# in Linux
+> 
+> \# If you are using Linux
 > 
 > source env/bin/activate
 
@@ -38,6 +38,11 @@ In this repo there are two main folders
 Is a basic template that I made for making custom telegram bots. This bot speaks like Yoda from Star Wars.
 ### Multi ego bot
 Is a more sofisticated bot that and can switch into its neapolitan alter ego.
+#### Bot in action
+Yoda can do a lot of things! Here's an example of me chatting with him
+
+![yodacommands](https://github.com/AlessandroBonomo28/OpenAI-Prompting-Course/assets/75626033/c52e7fdd-145b-4666-a22e-7d6b04707812)
+
 ## .env configuration for scripts in the telegram folder
 > \#.env file
 >
