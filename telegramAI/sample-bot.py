@@ -42,7 +42,12 @@ chatMemory = {
             {'role':'user', 'content':"Question 2"},
             {'role':'assistant', 'content':"Answer 2"},
     ]
-}
+} # accumulates chats
+
+# Note: 
+# Feel free to empty the chatMemory dictionary, EXAMPLE_ID_1 and EXAMPLE_ID_2 are just placeholders.
+# They simply show how the memory looks like when there are accumulated chats
+
 # Keep in mind that Prompting in english is more effective than other languages
 
 DEFAULT_SYSTEM_MESSAGE = {'role':'system', 'content':"""
