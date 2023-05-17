@@ -47,6 +47,10 @@ Now let's ask him some questions
 
 ![story](https://github.com/AlessandroBonomo28/OpenAI-Prompting-Course/assets/75626033/e1d5387c-3a2e-4494-bd42-81b140c506c3)
 
+Yoda is context aware and can remember previous messages, let's prove it!
+
+![context](https://github.com/AlessandroBonomo28/OpenAI-Prompting-Course/assets/75626033/281ecba5-e89f-4810-b931-7cab397d6072)
+
 Yoda seems pretty chill, let's switch to its neapolitan ego
 
 
