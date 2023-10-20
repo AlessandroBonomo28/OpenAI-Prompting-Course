@@ -60,19 +60,6 @@ Yoda seems pretty chill, let's switch to its **neapolitan ego**
 
 ![yodanapoli](https://github.com/AlessandroBonomo28/OpenAI-Prompting-Course/assets/75626033/554ad6b5-db31-431b-8301-53115fd4f0dc)
 
-Yoda Napoletano (alcune volte più romano che napoletano) can answer complex questions
-
-![sock1](https://github.com/AlessandroBonomo28/OpenAI-Prompting-Course/assets/75626033/8164bf99-ef53-477d-b446-1291c5ec07c4)
-![sock2](https://github.com/AlessandroBonomo28/OpenAI-Prompting-Course/assets/75626033/1d3f2083-58a6-4a25-9191-e4a9ad276bd3)
-![sock3](https://github.com/AlessandroBonomo28/OpenAI-Prompting-Course/assets/75626033/00ca2a19-0317-4ffb-a3d1-d894de4bdfc1)
-
-
-
-Now let's go back to the normal Yoda ego
-
-![reset](https://github.com/AlessandroBonomo28/OpenAI-Prompting-Course/assets/75626033/4698b9f0-15c9-4c05-afa6-960f9c7e6b7b)
-
-Yoda is back and as you see it respond in the language spoke by the user (in this case Italian).
 ## .env configuration for scripts in the telegram folder
 > \#.env file
 >
