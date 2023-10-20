@@ -9,7 +9,11 @@ Note: I am using *Python 3.11.0* but I think that this will work also for *3.9* 
 - Create a file named *.env* and edit as follows
 > \# .env file
 > 
-> OPENAI_API_KEY = "Your api key"
+> OPENAI_API_KEY = "xxxxxxx"
+> 
+> TOKEN_TELEGRAM = "xxxxxxx"
+> 
+> WHITELIST_ID_TELEGRAM = "aaaa,bbbb,cccc,ddddd"
 - run the environment
 > \# If you are using windows Windows
 > 
