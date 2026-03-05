@@ -60,9 +60,6 @@ You can also empty Yoda's memory
 
 ![clear](https://github.com/AlessandroBonomo28/OpenAI-Prompting-Course/assets/75626033/66a1ae64-160e-4da4-8905-25d6795a0f9b)
 
-Yoda seems pretty chill, let's switch to its **neapolitan ego**
-
-![yodanapoli](https://github.com/AlessandroBonomo28/OpenAI-Prompting-Course/assets/75626033/554ad6b5-db31-431b-8301-53115fd4f0dc)
 
 ## .env configuration for scripts in the telegram folder
 > \#.env file
