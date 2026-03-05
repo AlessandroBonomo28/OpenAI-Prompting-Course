@@ -52,14 +52,6 @@ Now let's ask him some questions
 
 ![story](https://github.com/AlessandroBonomo28/OpenAI-Prompting-Course/assets/75626033/e1d5387c-3a2e-4494-bd42-81b140c506c3)
 
-Yoda is **context-aware** and can **remember previous messages**, let's prove it!
-
-![context](https://github.com/AlessandroBonomo28/OpenAI-Prompting-Course/assets/75626033/281ecba5-e89f-4810-b931-7cab397d6072)
-
-You can also empty Yoda's memory
-
-![clear](https://github.com/AlessandroBonomo28/OpenAI-Prompting-Course/assets/75626033/66a1ae64-160e-4da4-8905-25d6795a0f9b)
-
 
 ## .env configuration for scripts in the telegram folder
 > \#.env file
